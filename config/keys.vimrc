@@ -9,6 +9,19 @@ nnoremap <BS> <C-u>
 nmap <Leader>j gj
 nmap <Leader>k gk
 
+" termial
+function! Openterm()
+  execute 'new'
+  execute termopen("cd " . getcwd() . " && " . $SHELL)
+  execute 'startinsert'
+endfunction
+" open
+nnoremap <Leader>tt :call Openterm()<CR>
+" escape
+tnoremap <C-a> <C-\><C-n>
+" exit
+tnoremap <Esc><Esc> <C-\><C-n>:bd!<CR>
+
 " buffer keys
 nnoremap <Leader>bb :b#<CR>
 nnoremap <Leader>bn :bn<CR>
@@ -37,16 +50,15 @@ nnoremap <Leader>ww <C-w>w
 nnoremap <Leader>wp <C-w>p
 nnoremap <Leader>wt <C-w><C-t>
 nnoremap <Leader>wr <C-w>r
-nnoremap <Leader>wl <C-w>L
-nnoremap <Leader>wh <C-w>H
-nnoremap <Leader>wj <C-w>J
-nnoremap <Leader>wk <C-w>K
+nnoremap <Leader>wL <C-w>L
+nnoremap <Leader>wH <C-w>H
+nnoremap <Leader>wJ <C-w>J
+nnoremap <Leader>wK <C-w>K
+nnoremap <Leader>wl <C-w>l
+nnoremap <Leader>wh <C-w>h
+nnoremap <Leader>wj <C-w>j
+nnoremap <Leader>wk <C-w>k
 nnoremap <Leader>wx :close<CR>
-
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
 
 " command mode maps
 " better command-line window scrolling with <C-P> & <C-N>
