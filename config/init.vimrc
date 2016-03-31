@@ -49,9 +49,6 @@ Plug 'digitaltoad/vim-jade'
 Plug 'elzr/vim-json'
 Plug 'mxw/vim-jsx'
 
-" elixir
-Plug 'elixir-lang/vim-elixir'
-
 " other
 Plug 'mattn/emmet-vim'
 Plug 'othree/html5.vim'

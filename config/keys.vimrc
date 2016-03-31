@@ -1,5 +1,5 @@
 " map Leader
-let mapleader = ","
+let mapleader = " "
 " keep backward f search, remapping it to ,;
 nnoremap <Leader>; ,
 
