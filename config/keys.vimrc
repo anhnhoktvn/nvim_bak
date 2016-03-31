@@ -1,7 +1,10 @@
 " map Leader
-let mapleader = " "
-" keep backward f search, remapping it to ,;
-nnoremap <Leader>; ,
+let mapleader="\<SPACE>"
+
+nnoremap ; :    " Use ; for commands.
+" page motion
+nnoremap <CR> <C-d>
+nnoremap <BS> <C-u>
 
 " in-line scrolling
 nmap <Leader>j gj
@@ -19,13 +22,29 @@ nnoremap <Leader>bd :bd!<CR>
 nnoremap <Leader>e :enew<CR>
 
 " window keys
+nnoremap <Leader>w_ <C-w>_
+nnoremap <Leader>w= <C-w>=
 nnoremap <Leader>w< <C-w><
 nnoremap <Leader>w> <C-w>>
 nnoremap <Leader>w- <C-w>-
 nnoremap <Leader>w+ <C-w>+
-nnoremap <Leader>ws :split<CR>
-nnoremap <Leader>wv :vsplit<CR>
+nnoremap <Leader>ws :sp \| b
+nnoremap <Leader>wv :vsp \| b
 nnoremap <Leader>wx :close<CR>
+nnoremap <Leader>wq <C-w>q
+nnoremap <Leader>ww <C-w>w
+nnoremap <Leader>wp <C-w>p
+nnoremap <Leader>wt <C-w><C-t>
+nnoremap <Leader>wr <C-w>r
+nnoremap <Leader>wl <C-w>L
+nnoremap <Leader>wh <C-w>H
+nnoremap <Leader>wj <C-w>J
+nnoremap <Leader>wk <C-w>K
+
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
 " command mode maps
 " better command-line window scrolling with <C-P> & <C-N>
@@ -52,14 +71,14 @@ nnoremap <F8> :Geeknote<CR>
 " indent whole file according to syntax rules
 noremap <F9> gg=G
 
+" relative line numbers
+nnoremap <Leader>3 :NumbersToggle<CR>
+
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
 " Don't use Ex mode, use Q for formatting
 map Q gq
-
-" relative line numbers
-nnoremap <Leader>3 :NumbersToggle<CR>
 
 " snippets
 let g:UltiSnipsExpandTrigger="<c-j>"

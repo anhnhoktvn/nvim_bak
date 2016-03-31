@@ -1,10 +1,6 @@
 call plug#begin('~/.config/nvim/plugged')
 
 " colorschemes
-Plug 'junegunn/seoul256.vim'
-Plug 'nanotech/jellybeans.vim'
-Plug 'goatslacker/mango.vim'
-Plug 'croaker/mustang-vim'
 Plug 'w0ng/vim-hybrid'
 
 " general
