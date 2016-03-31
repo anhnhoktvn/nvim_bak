@@ -1,35 +1,41 @@
 syntax on
 syntax enable
 
-set hlsearch
+set showmatch           " Show matching brackets.
+set number              " Show the line numbers on the left side.
+set formatoptions+=o    " Continue comment marker in new lines.
+set textwidth=0         " Hard-wrap long lines as you type them.
 
-set number
+set noerrorbells        " No beeps.
+set modeline            " Enable modeline.
+set esckeys             " Cursor keys in insert mode.
+set linespace=0         " Set line-spacing to minimum.
+set nojoinspaces        " Prevents inserting two spaces after punctuation on a join (J)
+
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
+
+" More natural splits
+set splitbelow          " Horizontal split below current.
+set splitright          " Vertical split to right of current.
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+" backup
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
 else
   set backup		" keep a backup file
 endif
+set backupdir=~/.config/nvim/backup
 
+" hard undo
 set undodir=~/.config/nvim/undodir
 set undofile
 set undolevels=100
 set undoreload=1000
-
-set backupdir=~/.config/nvim/backup
 set directory=~/.config/nvim/backup
-
-set ruler		" show the cursor position all the time
-set cursorline
-
-set showcmd		" display incomplete commands
-
-if has('mouse')
-  set mouse=a
-endif
 
 if has("autocmd")
 
@@ -57,17 +63,17 @@ if has("autocmd")
 endif " has("autocmd")
 
 " tab stuff
-set tabstop=2
 set softtabstop=2
 set expandtab
 set smarttab
-set shiftwidth=2
 set autoindent
 set smartindent
+set tabstop=2           " Render TABs using this many spaces.
+set shiftwidth=2        " Indentation amount for < and > commands.
 
-set complete-=i
+set complete-=i  " disable scan current and included files
 
-set nrformats-=octal
+set nrformats-=octal " disable octal
 
 set ttimeout
 set ttimeoutlen=100
@@ -87,11 +93,21 @@ set so=5 " scroll lines above/below cursor
 set sidescrolloff=5
 set lazyredraw
 
-set magic " for regular expressions
-
 if &listchars ==# 'eol:$'
   set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 endif
+
+" Also highlight all tabs and trailing whitespace characters.
+highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+match ExtraWhitespace /\s\+$\|\t/
+
+" search
+set hlsearch            " Highlight search results.
+set ignorecase          " Make searching case insensitive
+set smartcase           " ... unless the query has capital letters.
+set incsearch           " Incremental search.
+set gdefault            " Use 'g' flag by default with :s/foo/bar/.
+set magic               " Use 'magic' patterns (extended regular expressions).
 
 if has('path_extra')
   setglobal tags-=./tags tags^=./tags;

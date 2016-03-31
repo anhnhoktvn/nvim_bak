@@ -2,6 +2,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " colorschemes
 Plug 'w0ng/vim-hybrid'
+Plug 'mhartington/oceanic-next'
 
 " general
 " Plug 'ervandew/supertab'
@@ -13,6 +14,7 @@ Plug 'honza/vim-snippets'
 Plug 'haya14busa/incsearch.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-fugitive'
 
 " editing
 Plug 'junegunn/vim-easy-align'

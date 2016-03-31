@@ -27,13 +27,8 @@ let g:neomake_open_list = 2
 let g:neomake_javascript_enabled_makers = ['eslint']
 
 
-set background=dark
 colorscheme hybrid
-
-" make background transparent
-" hi Normal ctermbg=NONE
-" hi EndOfBuffer ctermbg=NONE
-" hi LineNr ctermbg=234
+set background=dark
 
 " CtrlP
 let g:ctrlp_prompt_mappings={'PrtClearCache()':['<Leader><F5>']}
@@ -42,6 +37,10 @@ let g:ctrlp_match_window='bottom,order:btt,min:2,max:25'
 set wildmenu " enhanced autocomplete
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*node_modules*,*.jpg,*.png,*.svg,*.ttf,*.woff,*.woff3,*.eot
 ",*public/css/*,*public/js*
+let g:ctrlp_working_path_mode = 'rw'
+
+" NERDTree
+let g:NERDTreeChDirMode       = 2
 
 " delimitMate options
 let delimitMate_expand_cr=1

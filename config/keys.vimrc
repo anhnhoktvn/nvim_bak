@@ -1,7 +1,6 @@
 " map Leader
 let mapleader="\<SPACE>"
 
-nnoremap ; :    " Use ; for commands.
 " page motion
 nnoremap <CR> <C-d>
 nnoremap <BS> <C-u>
@@ -18,6 +17,11 @@ nnoremap <Leader>bf :bf<CR>
 nnoremap <Leader>bl :bl<CR>
 nnoremap <Leader>bw :w<CR>:bd<CR>
 nnoremap <Leader>bd :bd!<CR>
+nnoremap <Leader>bc :bd<CR>
+nnoremap <Leader>bQ :%bd<CR>
+nnoremap <Leader>bq :bd<CR>
+nnoremap <Leader>bs :sp \| b
+nnoremap <Leader>bv :vsp \| b
 " new buffer/tab
 nnoremap <Leader>e :enew<CR>
 
@@ -28,9 +32,6 @@ nnoremap <Leader>w< <C-w><
 nnoremap <Leader>w> <C-w>>
 nnoremap <Leader>w- <C-w>-
 nnoremap <Leader>w+ <C-w>+
-nnoremap <Leader>ws :sp \| b
-nnoremap <Leader>wv :vsp \| b
-nnoremap <Leader>wx :close<CR>
 nnoremap <Leader>wq <C-w>q
 nnoremap <Leader>ww <C-w>w
 nnoremap <Leader>wp <C-w>p
@@ -40,6 +41,7 @@ nnoremap <Leader>wl <C-w>L
 nnoremap <Leader>wh <C-w>H
 nnoremap <Leader>wj <C-w>J
 nnoremap <Leader>wk <C-w>K
+nnoremap <Leader>wx :close<CR>
 
 map <C-j> <C-W>j
 map <C-k> <C-W>k
@@ -67,7 +69,6 @@ nnoremap <F3> :set hlsearch!<CR>
 nnoremap <F5> :source $HOME/.config/nvim/init.vim<CR>
 nnoremap <F6> :NERDTreeToggle<CR>
 nnoremap <F7> :UndotreeToggle<CR>
-nnoremap <F8> :Geeknote<CR>
 " indent whole file according to syntax rules
 noremap <F9> gg=G
 
@@ -131,3 +132,7 @@ inoremap <Leader><Tab> <Space><Space>
 
 " tern
 autocmd FileType javascript nnoremap <silent> <buffer> gb :TernDef<CR>
+
+" -----------------------
+
+nmap <Leader>n :NERDTreeFind<CR>
