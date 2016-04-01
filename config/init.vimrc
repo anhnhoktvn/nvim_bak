@@ -8,13 +8,19 @@ Plug 'mhartington/oceanic-next'
 " Plug 'ervandew/supertab'
 Plug 'benekastah/neomake'
 Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/neomru.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'haya14busa/incsearch.vim'
-Plug 'kien/ctrlp.vim'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'tpope/vim-fugitive'
+"Plug 'haya14busa/incsearch.vim'
+"Plug 'kien/ctrlp.vim'
+"Plug 'christoomey/vim-tmux-navigator'
+"Plug 'tpope/vim-fugitive'
+
+" Unite plugins
+Plug 'ujihisa/unite-colorscheme'
 
 " editing
 Plug 'junegunn/vim-easy-align'

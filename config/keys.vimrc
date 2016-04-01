@@ -4,11 +4,17 @@ let mapleader="\<SPACE>"
 " page motion
 nnoremap <CR> <C-d>
 nnoremap <BS> <C-u>
-
+nnoremap <Leader>cd :lcd %:p:h<cr>
 " in-line scrolling
-nmap <Leader>j gj
-nmap <Leader>k gk
+nmap j gj
+nmap k gk
+map $ g_
+" insert semicolon to eol
+nnoremap ;; :s/\v(.)$/\=submatch(1)==';' ? '' : submatch(1).';'<CR>
+nnoremap ,, :s/\v(.)$/\=submatch(1)==',' ? '' : submatch(1).','<CR>
 
+" search
+vnoremap <C-r> :s/\%V
 " termial
 function! Openterm()
   execute 'new'
@@ -39,6 +45,8 @@ nnoremap <Leader>bv :vsp \| b
 nnoremap <Leader>e :enew<CR>
 
 " window keys
+nnoremap <Leader>wo :on<cr>
+nnoremap <Leader>w\| <C-w>\|
 nnoremap <Leader>w_ <C-w>_
 nnoremap <Leader>w= <C-w>=
 nnoremap <Leader>w< <C-w><
@@ -59,7 +67,8 @@ nnoremap <Leader>wh <C-w>h
 nnoremap <Leader>wj <C-w>j
 nnoremap <Leader>wk <C-w>k
 nnoremap <Leader>wx :close<CR>
-
+nnoremap <Leader>ws :sp \| b
+nnoremap <Leader>wv :vsp \| b
 " command mode maps
 " better command-line window scrolling with <C-P> & <C-N>
 " cnoremap <C-p> <Up>
@@ -68,22 +77,26 @@ nnoremap <Leader>wx :close<CR>
 " %% to expand active buffer location on cmdline
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
-" CtrlP keys
-nnoremap <Leader>pp :CtrlP<CR>
-nnoremap <Leader>pf :CtrlP<CR>
-nnoremap <Leader>pm :CtrlPMRUFiles<CR>
-nnoremap <Leader>pr :CtrlPMRUFiles<CR>
-nnoremap <Leader>pb :CtrlPBuffer<CR>
+" Unite - awesome
+nnoremap <Leader>fs :Unite -auto-resize source<cr>
+nnoremap <Leader>fa :Unite -auto-resize neomru/file neomru/directory file/async directory<cr>
+nnoremap <Leader>ff :Unite -auto-resize file/async directory<cr>
+nnoremap <Leader>fr :Unite -auto-resize neomru/file neomru/directory<cr>
+nnoremap <Leader>fh :Unite history/unite<cr>
+nnoremap <Leader>ft :Unite -quick-match buffer<cr>
+nnoremap <Leader>fb :Unite -auto-resize bookmark<cr>
+nnoremap <Leader>/ :Unite grep:.<cr>
 
 " Function keys
 nnoremap <silent> <F2> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
-nnoremap <F3> :set hlsearch!<CR>
 nnoremap <F5> :source $HOME/.config/nvim/init.vim<CR>
 nnoremap <F6> :NERDTreeToggle<CR>
 nnoremap <F7> :UndotreeToggle<CR>
 " indent whole file according to syntax rules
 noremap <F9> gg=G
 
+" clear hightlight
+nnoremap <F3> :set hlsearch!<CR>
 " relative line numbers
 nnoremap <Leader>3 :NumbersToggle<CR>
 
@@ -135,7 +148,7 @@ nmap ga <Plug>(EasyAlign)
 " nmap <Leader><Space>p :lprev<CR>
 
 " folding
-nmap <Leader>f zf%
+" nmap <Leader>f zf%
 
 " deoplete tab-complete
 inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()

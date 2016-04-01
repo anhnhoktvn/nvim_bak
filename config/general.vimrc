@@ -1,6 +1,9 @@
 syntax on
 syntax enable
 
+" clear hightlight on-reload
+let @/ = ""
+
 set showmatch           " Show matching brackets.
 set number              " Show the line numbers on the left side.
 set formatoptions+=o    " Continue comment marker in new lines.
@@ -11,6 +14,7 @@ set modeline            " Enable modeline.
 set esckeys             " Cursor keys in insert mode.
 set linespace=0         " Set line-spacing to minimum.
 set nojoinspaces        " Prevents inserting two spaces after punctuation on a join (J)
+set nostartofline       " Do not jump to first character with page commands.
 
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
