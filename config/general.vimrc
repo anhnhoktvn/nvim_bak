@@ -3,7 +3,7 @@ syntax enable
 
 " clear hightlight on-reload
 let @/ = ""
-
+set autochdir
 set showmatch           " Show matching brackets.
 set number              " Show the line numbers on the left side.
 set formatoptions+=o    " Continue comment marker in new lines.

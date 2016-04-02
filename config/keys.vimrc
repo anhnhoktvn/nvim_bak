@@ -1,14 +1,25 @@
 " map Leader
 let mapleader="\<SPACE>"
 
+" Unite - awesome
+nnoremap <Leader>fs :Unite -auto-resize source<cr>
+nnoremap <Leader>fa :Unite -auto-resize neomru/file neomru/directory file/async directory<cr>
+nnoremap <Leader>ff :Unite -auto-resize file_rec/neovim directory file/new<cr>
+nnoremap <Leader>fr :Unite -auto-resize neomru/file neomru/directory<cr>
+nnoremap <Leader>fh :Unite history/unite<cr>
+nnoremap <Leader>ft :Unite -quick-match buffer<cr>
+nnoremap <Leader>fb :Unite -auto-resize bookmark<cr>
+nnoremap <Leader>/ :Unite grep:.<cr>
+
 " page motion
 nnoremap <CR> <C-d>
 nnoremap <BS> <C-u>
-nnoremap <Leader>cd :lcd %:p:h<cr>
+nnoremap <Leader>cd :lcd %:p:h
+nnoremap <Leader>cc :let @+ = expand("%:p:h")<cr>
 " in-line scrolling
 nmap j gj
 nmap k gk
-map $ g_
+nmap $ g_
 " insert semicolon to eol
 nnoremap ;; :s/\v(.)$/\=submatch(1)==';' ? '' : submatch(1).';'<CR>
 nnoremap ,, :s/\v(.)$/\=submatch(1)==',' ? '' : submatch(1).','<CR>
@@ -76,17 +87,6 @@ nnoremap <Leader>wv :vsp \| b
 
 " %% to expand active buffer location on cmdline
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
-
-" Unite - awesome
-nnoremap <Leader>fs :Unite -auto-resize source<cr>
-nnoremap <Leader>fa :Unite -auto-resize neomru/file neomru/directory file/async directory<cr>
-nnoremap <Leader>ff :Unite -auto-resize file/async directory<cr>
-nnoremap <Leader>fr :Unite -auto-resize neomru/file neomru/directory<cr>
-nnoremap <Leader>fh :Unite history/unite<cr>
-nnoremap <Leader>ft :Unite -quick-match buffer<cr>
-nnoremap <Leader>fb :Unite -auto-resize bookmark<cr>
-nnoremap <Leader>/ :Unite grep:.<cr>
-
 " Function keys
 nnoremap <silent> <F2> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 nnoremap <F5> :source $HOME/.config/nvim/init.vim<CR>
