@@ -3,7 +3,7 @@ syntax enable
 
 " clear hightlight on-reload
 let @/ = ""
-set autochdir
+"set autochdir           " Auto set cwd to current file
 set showmatch           " Show matching brackets.
 set number              " Show the line numbers on the left side.
 set formatoptions+=o    " Continue comment marker in new lines.
@@ -117,7 +117,7 @@ if has('path_extra')
   setglobal tags-=./tags tags^=./tags;
 endif
 
-set autoread
+set autoread " auto reload file when it change
 
 if &history < 1000
   set history=1000
