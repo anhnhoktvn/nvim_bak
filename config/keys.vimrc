@@ -2,22 +2,25 @@
 let mapleader="\<SPACE>"
 
 " -------------------------- Unite -----------------------
-nnoremap <Leader>fa :Unite neomru/file file/async file/new<cr>
-nnoremap <Leader>ff :Unite file_rec/async file/new<cr>
-nnoremap <Leader>fr :Unite neomru/file file/new<cr>
+nnoremap <Leader>fa :lcd %:p:h\|:UniteWithCurrentDir -no-split neomru/file file_rec/async file/new<cr>
+nnoremap <Leader>ff :lcd %:p:h\|:UniteWithCurrentDir -no-split file_rec/async file/new<cr>
+nnoremap <Leader>fr :Unite -no-split neomru/file file/new<cr>
 nnoremap <Leader>fh :Unite history/unite<cr>
 nnoremap <Leader>ft :Unite -quick-match buffer<cr>
-nnoremap <Leader>fb :Unite bookmark<cr>
+nnoremap <Leader>fb :Unite -no-split bookmark<cr>
 nnoremap <Leader>/ :Unite grep:.<cr>
 nnoremap <leader>fg :Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
 
 " ----------Function keys------------
 
-nnoremap <F1> :VimFilerExplorer -parent -auto-cd -status -explorer-columns=type<cr>
-nnoremap <F2> :Unite source -toggle<cr>
+nnoremap <F1> :VimFilerExplorer -parent -auto-cd -status -explorer-columns=type -project<cr>
+nnoremap <F2> :VimFilerExplorer -parent -auto-cd -status -explorer-columns=type bookmark:<cr>
 nnoremap <F3> :Unite source -toggle<cr>
+nnoremap <F4> :UniteWithCurrentDir source -toggle<cr>
 nnoremap <F5> :source $HOME/.config/nvim/init.vim<CR>
 
+" save
+nnoremap q :w<cr>
 " clear hightlight
 nnoremap <Leader>h :set hlsearch!<CR>
 

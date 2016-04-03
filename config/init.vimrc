@@ -34,12 +34,16 @@ Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " javascript
+Plug 'jelera/vim-javascript-syntax'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'gavocanov/vim-js-indent'
+Plug '1995eaton/vim-better-javascript-completion'
 "Plug 'guileen/vim-node-dict'
 "Plug 'moll/vim-node'
 "Plug 'othree/yajs.vim'
 "Plug 'othree/javascript-libraries-syntax.vim'
-"Plug '1995eaton/vim-better-javascript-completion'
-"Plug 'gavocanov/vim-js-indent'
 "Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 "Plug 'digitaltoad/vim-jade'
 "Plug 'elzr/vim-json'
